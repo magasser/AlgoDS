@@ -28,7 +28,7 @@ public class FloodFill extends Application {
 
         points = makeHeart(A,B);
         drawGrid();
-        floodFill(points, 15, 15, A, B);
+        floodFill(points, 11, 11, A, B);
 
         stage.setScene(scene);
         stage.show();
@@ -50,18 +50,25 @@ public class FloodFill extends Application {
     public boolean[][] makeHeart(int a, int b){
         boolean[][] heart = new boolean [a][b];
 
-        for(int x = 10; x < 50; x++){
-            heart[x][10] = true;
-        }
-        for(int y = 10; y < 50; y++){
-            heart[10][y] = true;
-        }
-        for(int x = 10; x < 51; x++){
-            heart[x][50] = true;
-        }
-        for(int y = 10; y < 50; y++){
-            heart[50][y] = true;
-        }
+        heart[10][10] = true;
+        heart[11][10] = true;
+        heart[9][11] = true;
+        heart[9][12] = true;
+        heart[10][13] = true;
+        heart[11][14] = true;
+        heart[12][15] = true;
+        heart[13][16] = true;
+        heart[14][15] = true;
+        heart[15][14] = true;
+        heart[16][13] = true;
+        heart[17][12] = true;
+        heart[17][11] = true;
+        heart[16][10] = true;
+        heart[15][10] = true;
+        heart[14][11] = true;
+        heart[12][11] = true;
+        heart[13][12] = true;
+
 
 
         return heart;
@@ -70,7 +77,7 @@ public class FloodFill extends Application {
     public static void drawPoint(int x, int y){
         points[x][y] = true;
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        gc.setFill(Color.BLACK);
+        gc.setFill(Color.PINK);
         gc.fillRect(x*SIZE, y*SIZE, SIZE, SIZE);
     }
 
